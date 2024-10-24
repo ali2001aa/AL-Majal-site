@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL Majal Oilfield Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #175280;
+        }
+        header {
+            background-color: #ffffff;
+            color: #07264f;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #333;
+            color: #ffffff;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #e6e6e6;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .main-content {
+            background-color: #b6c3c1;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        header img {
+            display: block;
+            margin: 10px auto 0; /* Adjust the top margin to lower the logo */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="D:\logoAM.png" alt=LOGO >
+        <h1>AL Majal Oilfield Services</h1>
+    </header>
+
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#OSCAR">OSCAR</a></li>
+            <li><a href="#Report">Report</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <h2>Welcome to AL Majal Oilfield Services</h2>
+            <p>AL Majal is a leading provider of comprehensive oilfield services. We offer innovative solutions to meet the challenges of the oil and gas industry.</p>
+            
+            <h3>Our Services</h3>
+            <ul>
+                <li>Drilling Support</li>
+                <li>Well Completion</li>
+                <li>Production Optimization</li>
+                <li>Reservoir Characterization</li>
+                <li>Equipment Rental</li>
+            </ul>
+            
+            <h3>Why Choose AL Majal?</h3>
+            <p>With years of experience and a team of skilled professionals, we deliver high-quality services tailored to meet your specific needs. Our commitment to safety, efficiency, and innovation sets us apart in the industry.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 AL Majal Oilfield Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const servicesListItem = document.querySelector('nav ul li a[href="#services"]');
+            const mainContent = document.querySelector('.main-content');
+            
+            servicesListItem.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const servicesList = `
+                    <div id="services-modal" class="modal">
+                        <div class="modal-content">
+                            <h2>Our Services and Features</h2>
+                            <ul>
+                                <li>
+                                    <h4>Drilling Support</h4>
+                                    <p>State-of-the-art drilling technologies and expert personnel to optimize your drilling operations.</p>
+                                </li>
+                                <li>
+                                    <h4>Well Completion</h4>
+                                    <p>Comprehensive well completion services to ensure maximum productivity and efficiency.</p>
+                                </li>
+                                <li>
+                                    <h4>Production Optimization</h4>
+                                    <p>Advanced techniques and tools to enhance oil and gas production from existing wells.</p>
+                                </li>
+                                <li>
+                                    <h4>Reservoir Characterization</h4>
+                                    <p>Detailed analysis and modeling of reservoirs to improve recovery strategies.</p>
+                                </li>
+                                <li>
+                                    <h4>Equipment Rental</h4>
+                                    <p>Wide range of high-quality oilfield equipment available for rent to meet your project needs.</p>
+                                </li>
+                            </ul>
+                            <button id="close-modal">Close</button>
+                        </div>
+                    </div>
+                `;
+                
+                mainContent.insertAdjacentHTML('afterend', servicesList);
+                
+                const modal = document.getElementById('services-modal');
+                const closeButton = document.getElementById('close-modal');
+                
+                modal.style.display = 'block';
+                
+                closeButton.onclick = function() {
+                    modal.style.display = 'none';
+                    modal.remove();
+                }
+                
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                        modal.remove();
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #eeeeee;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #1a1c97;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+        }
+        .modal-content h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .modal-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .modal-content li {
+            margin-bottom: 15px;
+        }
+        .modal-content h4 {
+            color: #0078d4;
+            margin-bottom: 5px;
+        }
+        .modal-content p {
+            margin: 0;
+            color: #666;
+        }
+        #close-modal {
+            background-color: #f8f8f8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #close-modal:hover {
+            background-color: #005a9e;
+        }
+    </style>
+
+    <style>
+        .report-button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .report-button:hover {
+            background-color: #f57c00;
+        }
+        #report-modal {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .report-modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+        }
+        .report-form label {
+            display: block;
+            margin-top: 10px;
+        }
+        .report-form input[type="text"],
+        .report-form textarea,
+        .report-form select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .report-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .report-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <button id="report-issue" class="report-button">Report Issue (STOP Card)</button>
+
+    <div id="report-modal">
+        <div class="report-modal-content">
+            <h2>Report an Issue or Feedback</h2>
+            <form id="report-form" class="report-form">
+                <label for="report-type">Type of Report:</label>
+                <select id="report-type" required>
+                    <option value="">Select type</option>
+                    <option value="incident">Incident</option>
+                    <option value="positive">Positive Feedback</option>
+                    <option value="negative">Negative Feedback</option>
+                </select>
+
+                <label for="report-title">Title:</label>
+                <input type="text" id="report-title" required>
+
+                <label for="report-description">Description:</label>
+                <textarea id="report-description" rows="4" required></textarea>
+
+                <button type="submit">Submit Report</button>
+            </form>
+            <button id="close-report-modal">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const reportButton = document.getElementById('report-issue');
+        const reportModal = document.getElementById('report-modal');
+        const closeReportModal = document.getElementById('close-report-modal');
+        const reportForm = document.getElementById('report-form');
+
+        reportButton.onclick = function() {
+            reportModal.style.display = "block";
+        }
+
+        closeReportModal.onclick = function() {
+            reportModal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == reportModal) {
+                reportModal.style.display = "none";
+            }
+        }
+
+       // ... existing code ...
+reportForm.onsubmit = function(e) {
+    e.preventDefault();
+    const type = document.getElementById('report-type').value;
+    const title = document.getElementById('report-title').value;
+    const description = document.getElementById('report-description').value;
+    
+    // Here you would typically send this data to a server
+    console.log('Report submitted:', { type, title, description });
+    
+    alert('Report submitted successfully!');
+    reportModal.style.display = "none";
+    reportForm.reset();
+    
+    // Redirect to the local reporting page
+    window.location.href = 'file:///C:/Users/Ali/Downloads/Untitled-2.html'; // Update with your local file path
+}
+// ... existing code ...
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const oscarLink = document.querySelector('nav ul li a[href="#OSCAR"]');
+            const mainContent = document.querySelector('.main-content');
+            
+            oscarLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const oscarContent = `
+                    <div id="oscar-modal" class="modal">
+                        <div class="modal-content">
+                            <h2>OSCAR - Safety Reporting System</h2>
+                            <p>OSCAR is our comprehensive Health, Safety, and Environment (HSE) Reporting System designed to ensure the wellbeing of our employees and the environment.</p>
+                            
+                            <h3>Key Features:</h3>
+                            <ul>
+                                <li>
+                                    <h4>HSE Incident Tracking</h4>
+                                    <p>Report and track safety, health, and environmental incidents to prevent recurrence and improve our safety measures.</p>
+                                </li>
+                                <li>
+                                    <h4>Near Miss Reporting</h4>
+                                    <p>Report near-miss incidents before they cause harm, helping us to proactively address potential hazards.</p>
+                                </li>
+                                <li>
+                                    <h4>Observation Card System</h4>
+                                    <p>Use our digital observation cards to note positive or negative safety behaviors, promoting a culture of safety awareness.</p>
+                                </li>
+                            </ul>
+                            
+                            <button id="close-oscar-modal">Close</button>
+                        </div>
+                    </div>
+                `;
+                
+                mainContent.insertAdjacentHTML('afterend', oscarContent);
+                
+                const modal = document.getElementById('oscar-modal');
+                const closeButton = document.getElementById('close-oscar-modal');
+                
+                modal.style.display = 'block';
+                
+                closeButton.onclick = function() {
+                    modal.style.display = 'none';
+                    modal.remove();
+                }
+                
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                        modal.remove();
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        #oscar-modal .modal-content h3 {
+            color: #005a9e;
+            margin-top: 20px;
+        }
+        #oscar-modal .modal-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #oscar-modal .modal-content li {
+            margin-bottom: 15px;
+        }
+        #oscar-modal .modal-content h4 {
+            color: #0078d4;
+            margin-bottom: 5px;
+        }
+        #oscar-modal .modal-content p {
+            margin: 0;
+            color: #666;
+        }
+        #close-oscar-modal {
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #close-oscar-modal:hover {
+            background-color: #005a9e;
+        }
+    </style>
+
+
+
+    <script>
+        // Add event listener for the Report link
+        document.addEventListener('DOMContentLoaded', function() {
+            // Find the Report link in the navigation
+            const reportLink = document.querySelector('nav ul li a[href="#Report"]');
+            
+            // Add click event listener to the Report link
+            reportLink.addEventListener('click', function(e) {
+                // Prevent the default link behavior
+                e.preventDefault();
+                
+                // Redirect to the reporting page
+                window.location.href = 'C:/Users/Ali/coach-app/public/index.html';
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create a "Share" button
+            const shareButton = document.createElement('button');
+            shareButton.textContent = 'Share This Page';
+            shareButton.style.cssText = `
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 4px;
+            `;
+
+            // Add click event listener to the Share button
+            shareButton.addEventListener('click', function() {
+                // Get the current page URL
+                const pageUrl = window.location.href;
+
+                // Create a temporary input element
+                const tempInput = document.createElement('input');
+                tempInput.value = pageUrl;
+                document.body.appendChild(tempInput);
+
+                // Select the input content
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+                // Copy the text to clipboard
+                document.execCommand('copy');
+
+                // Remove the temporary input
+                document.body.removeChild(tempInput);
+
+                // Provide feedback to the user
+                alert('Link copied to clipboard! You can now share it with your mates.');
+            });
+
+            // Add the Share button to the page
+            document.body.appendChild(shareButton);
+        });
+    </script>
+
